@@ -1,0 +1,238 @@
+:root {
+  --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-desaturated-dark-blue: hsl(214, 17%, 51%);
+  --color-grayish-blue: hsl(212, 23%, 69%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
+  --color-white: #ffffff
+}
+
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-light-grayish-blue);
+}
+
+/* Main classes */
+.attribution {
+  margin: 1rem 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.card {
+  position: relative;
+  width: 325px;
+  border-radius: 10px;
+  background-color: var(--color-white);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+
+.card .card__image {
+  background: url("../images/drawers.jpg") 0 -15px;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card .card__body__title {
+  color: var(--color-very-dark-grayish-blue);
+  font-size: 1.05rem;
+  padding: 2rem 1.8rem 1rem;
+}
+
+.card .card__body__content {
+  color: var(--color-desaturated-dark-blue);
+  font-size: .85rem;
+  padding: 0 1.8rem 1rem;
+}
+
+.card .card__body__user {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.8rem 1.5rem;
+}
+
+.card .card__body__user .card__body__user__image {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.card .card__body__user .card__body__user__info {
+  flex: 1;
+  padding-left: 1.2rem;
+}
+
+.card .card__body__user .card__body__user__info .card__body__user__info__name {
+  color: var(--color-very-dark-grayish-blue);
+  font-size: .87rem;
+  padding-bottom: .1rem;
+}
+
+.card .card__body__user .card__body__user__info .card__body__user__info__attribute {
+  color: var(--color-grayish-blue);
+  font-size: .85rem;
+}
+
+.card .card__body__user .card__body__user__share-icon {
+  background-color: var(--color-light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+.card .card__body__user .card__body__user__share-icon.card__body__user__share-icon--active {
+  background-color: var(--color-desaturated-dark-blue);
+}
+
+.card .card__body__user .card__body__user__share-icon svg {
+  width: 15px;
+  height: 13px;
+}
+
+.card .card__body__social {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: var(--color-very-dark-grayish-blue);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0 1.8rem;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .3s, z-index .3s;
+}
+
+.card .card__body__social--active {
+  opacity: 1;
+  z-index: 0;
+}
+
+.card .card__body__social .card__body__social__share-text {
+  color: var(--color-grayish-blue);
+  letter-spacing: .4rem;
+}
+
+.card .card__body__social .card__body__social__icons {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  flex: 1;
+  width: 30px;
+  height: 30px;
+}
+
+.card .card__body__user .card__body__user__share-icon svg, .card .card__body__user .card__body__user__share-icon svg path{
+  cursor: pointer;
+  width: 15px;
+  height: 13px;
+  fill: var(--color-desaturated-dark-blue);
+}
+
+.card .card__body__user .card__body__user__share-icon.card__body__user__share-icon--active {
+  margin-top: 8px;
+}
+
+.card .card__body__user .card__body__user__share-icon.card__body__user__share-icon--active svg, .card .card__body__user .card__body__user__share-icon.card__body__user__share-icon--active svg path{
+  fill: var(--color-light-grayish-blue);
+}
+
+.card .card__body__social .card__body__social__icons img:nth-child(1), .card .card__body__social .card__body__social__icons img:nth-child(2) {
+  margin-right: .75rem;
+}
+
+@media (min-width: 800px) {
+  .card {
+    display: flex;
+    width: 600px;
+    height: 225px;
+  }
+
+  .card .card__image {
+    width: 95%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+  }
+
+  .card .card__body__title {
+    padding: 1.5rem 2.5rem .8rem 1.5rem;
+  }
+
+  .card .card__body__content {
+    font-size: .7rem;
+    padding: 0 2.5rem 1rem 1.5rem;
+  }
+
+  .card .card__body__user {
+    padding: 0 2.5rem 1rem 1.5rem;
+  }
+
+  .card .card__body__user .card__body__user__image {
+    height: 35px;
+  }
+
+  .card .card__body__user .card__body__user__info .card__body__user__info__name {
+    font-size: .8rem;
+  }
+
+  .card .card__body__user .card__body__user__info .card__body__user__info__attribute {
+    font-size: .75rem;
+  }
+
+  .card .card__body__social {
+    bottom: 75px;
+    right: -54px;
+    height: 45px;
+    width: 214px;
+    border-radius: 7px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+  }
+
+  .card .card__body__social:after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 10px);;
+    width: 0;
+    height: 0;
+    border-top: solid 10px var(--color-very-dark-grayish-blue);
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+  }
+
+  .card .card__body__social .card__body__social__share-text {
+    font-size: .7rem;
+  }
+
+  .card .card__body__social .card__body__social__icons img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .card .card__body__user .card__body__user__share-icon.card__body__user__share-icon--active {
+    margin-top: 0;
+  }
+}
