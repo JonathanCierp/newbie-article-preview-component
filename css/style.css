@@ -141,6 +141,7 @@ body {
   flex: 1;
   width: 30px;
   height: 30px;
+  margin-top: 3px;
 }
 
 .card .card__body__user .card__body__user__share-icon svg, .card .card__body__user .card__body__user__share-icon svg path{
@@ -158,7 +159,7 @@ body {
   fill: var(--color-light-grayish-blue);
 }
 
-.card .card__body__social .card__body__social__icons img:nth-child(1), .card .card__body__social .card__body__social__icons img:nth-child(2) {
+.card .card__body__social .card__body__social__icons a:nth-child(1), .card .card__body__social .card__body__social__icons a:nth-child(2) {
   margin-right: .75rem;
 }
 
